@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About Me on 8e7&#39;s blog</title>
-    <link>http://8e7.github.io/</link>
-    <description>Recent content in About Me on 8e7&#39;s blog</description>
+    <title>競賽心得 on 8e7&#39;s blog</title>
+    <link>http://8e7.github.io/cp/contests/</link>
+    <description>Recent content in 競賽心得 on 8e7&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 20 Jan 2023 11:33:42 +0800</lastBuildDate><atom:link href="http://8e7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 May 2022 09:03:20 -0800</lastBuildDate><atom:link href="http://8e7.github.io/cp/contests/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TOI 2022 心得文</title>
       <link>http://8e7.github.io/cp/contests/toi2022/</link>
