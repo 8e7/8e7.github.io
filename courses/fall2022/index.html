@@ -1,0 +1,336 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='zh-tw'><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>台大資工大一上 修課心得 - 8e7&#39;s blog</title>
+
+    
+
+    
+
+    
+
+    
+        <meta property="og:title" content="台大資工大一上 修課心得" />
+<meta property="og:description" content="學期：111年第一學期 (Fall 2022) 前言 拖稿拖太久了qwq 看到一堆同學都有寫修課心得，所以想說也來寫寫看好了。這個修課心得可能比較像是學期回顧 (?)，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://8e7.github.io/courses/fall2022/" /><meta property="article:section" content="courses" />
+<meta property="article:published_time" content="2023-01-21T22:01:14+08:00" />
+<meta property="article:modified_time" content="2023-01-21T22:01:14+08:00" />
+
+    
+
+    
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="台大資工大一上 修課心得"/>
+<meta name="twitter:description" content="學期：111年第一學期 (Fall 2022) 前言 拖稿拖太久了qwq 看到一堆同學都有寫修課心得，所以想說也來寫寫看好了。這個修課心得可能比較像是學期回顧 (?)，"/>
+
+    <link rel="stylesheet" href="/style.min.5297c96c59a52afaa5bcda4a6cedf3813081f64025c209b25b2ee6d0c8f74d462b625ad3404a92a14d7a51b4ec0a420337ae70f426fa4bce2d5f7459a3ca7274.css" integrity="sha512-UpfJbFmlKvqlvNpKbO3zgTCB9kAlwgmyWy7m0Mj3TUYrYlrTQEqSoU16UbTsCkIDN65w9Cb6S84tX3RZo8pydA==">
+
+
+
+
+
+    
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/header.7a2a109ec3782c57bad0332b662f8a5f41765505936b69868eb8bd5241de9daf23c388e82ca1831f6d09935013dcb9f71bfa7face3975880c1076028b7b0a6e1.js" integrity="sha512-eioQnsN4LFe60DMrZi&#43;KX0F2VQWTa2mGjri9UkHena8jw4joLKGDH20Jk1AT3Ln3G/p/rOOXWIDBB2Aot7Cm4Q=="></script>
+
+
+
+    <script defer src="/js/zooming.684b5d075bf94d0adfa21a7e7eb9acec1ddfb2e7b47d6657981617f0db0cf50949f1172801595afa3051f51b28d67f6a2d0c41be677b59b564307d9dbe4a4fd2.js" integrity="sha512-aEtdB1v5TQrfohp&#43;frms7B3fsue0fWZXmBYX8NsM9QlJ8RcoAVla&#43;jBR9Rso1n9qLQxBvmd7WbVkMH2dvkpP0g=="></script>
+
+
+
+
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer src="/js/math.d7efde37b2eb8879651e1f4489bcd4d8203b8c2bf8ca12c9e1b8cd11bfd6395b172f4999fff43ce0d047889a2bdb71ee74aebbae5327590192d1144e790fcd7b.js" integrity="sha512-1&#43;/eN7LriHllHh9EibzU2CA7jCv4yhLJ4bjNEb/WOVsXL0mZ//Q84NBHiJor23HudK67rlMnWQGS0RROeQ/New=="></script>
+
+
+
+
+
+
+
+
+
+</head><body>
+        <main><header>
+    <div class="brand">
+        <div id="sidebar_btn">
+            <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></svg>
+        </div>
+
+        <div>
+            <a href="/">8e7's blog</a>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></svg>
+            <svg id="light_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></svg>
+        </div>
+
+        
+
+        
+    </div>
+</header>
+<nav id="navbar" class="pure-menu"><ul class="pure-menu-list"><li class="navbar-item navbar-dropdown pure-menu-item pure-menu-has-children pure-menu-allow-hover ">
+                    
+                        <a href="/cp/" class="pure-menu-link">競程筆記</a>
+                    
+                    <ul class="pure-menu-children">
+    
+        <li class="pure-menu-item">
+            
+                <a href="/cp/tutorials/" class="pure-menu-link">算法簡介和題解</a>
+            
+        </li>
+    
+
+    
+        <li class="pure-menu-item">
+            
+                <a href="/cp/contests/" class="pure-menu-link">比賽心得</a>
+            
+        </li>
+    
+
+</ul>
+                </li><li class="navbar-item pure-menu-item ">
+                    
+                        <a href="/posts/" class="pure-menu-link">其他</a>
+                    
+                </li><li class="navbar-item pure-menu-item insection">
+                    
+                        <a href="/courses/" class="pure-menu-link">修課心得</a>
+                    
+                </li></ul>
+</nav>
+<div id="sidebar_canvas_overlay" class="hidden"></div>
+<div id="sidebar" class="close">
+    <ul><li>
+                    <details>
+                        <summary><a href="/cp/">競程筆記</a></summary>
+    <ul>
+        
+            
+                <li>
+                    
+                        <a href="/cp/tutorials/">算法簡介和題解</a>
+                    
+                </li>
+            
+        
+            
+                <li>
+                    
+                        <a href="/cp/contests/">比賽心得</a>
+                    
+                </li>
+            
+        
+    </ul>
+</details>
+                </li><li>
+                    <a href="/posts/">其他</a>
+                </li><li>
+                    <a href="/courses/">修課心得</a>
+                </li></ul>
+</div><div id="content" class="content-margin">
+                
+    
+    <details class="collapsible-menu-wrapper"><summary class="collapsible-menu-type"><span>Table of contents</span></summary><div class="collapsible-menu">
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#修課清單">修課清單：</a></li>
+    <li><a href="#正文">正文</a>
+      <ul>
+        <li><a href="#計算機程式設計真強者視角">計算機程式設計（真強者視角）</a></li>
+        <li><a href="#微積分-12">微積分 (1)(2)</a></li>
+        <li><a href="#普通物理學甲上">普通物理學甲上</a></li>
+        <li><a href="#演算法設計與分析-ada">演算法設計與分析 (ADA)</a></li>
+        <li><a href="#計算機概論">計算機概論</a></li>
+        <li><a href="#大學國文文學鑑賞與寫作一">大學國文：文學鑑賞與寫作（一）</a></li>
+        <li><a href="#程式結構與設計-icpc-培訓班">程式結構與設計 (ICPC 培訓班)</a></li>
+        <li><a href="#健康體適能">健康體適能</a></li>
+      </ul>
+    </li>
+    <li><a href="#結語">結語</a></li>
+  </ul>
+</nav>
+        
+    </div></details>
+
+
+
+    <div class="content-margin">
+
+<article class="line-numbers">
+    
+    
+    <p>學期：111年第一學期 (Fall 2022)</p>
+<h2 id="前言">前言</h2>
+<p>拖稿拖太久了qwq</p>
+<p>看到一堆同學都有寫修課心得，所以想說也來寫寫看好了。這個修課心得可能比較像是學期回顧 (?)，主要目的是讓我整理這個學期各個課程的 Loading 狀況，再去看看下學期要如何做調整。喔對，還有想要用用看新架起來的部落格。</p>
+<p>這篇修課心得可能對還沒修過課的人沒有太大的幫助，因為內容主要會是我個人修課的狀況，不會太詳細的介紹課程內容。如果想要更清楚知道上課內容和方式等，可以參考以下幾位同學的心得。</p>
+<ul>
+<li><a href="https://yunxiurz.github.io/posts/%E5%8F%B0%E5%A4%A7%E8%B3%87%E5%B7%A5%E5%A4%A7%E4%B8%80%E4%B8%8A%E4%BF%AE%E8%AA%B2%E5%BF%83%E5%BE%97/">台大資工大一上修課心得 - YunxiuRZ</a></li>
+<li><a href="https://forever-codingnoob.github.io/2023/01/17/111-1-%E5%A4%A7%E4%B8%80%E4%B8%8A%E4%BF%AE%E8%AA%B2%E5%BF%83%E5%BE%97/">111-1 大一上修課心得 :: f0rvxdd&rsquo;s place</a></li>
+<li><a href="https://achi-kyw.github.io/posts/2023/01/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E7%AC%AC%E4%B8%80%E5%AD%B8%E6%9C%9F%E4%BF%AE%E8%AA%B2%E5%9B%9E%E9%A1%A7/">111學年度第一學期修課回顧 :: Achi_kyw的札記</a></li>
+</ul>
+<h2 id="修課清單">修課清單：</h2>
+<table class="mc-table">
+<thead>
+<tr>
+<th>課程名稱</th>
+<th>學分數</th>
+<th>授課教師</th>
+<th>分類</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>計算機程式設計</td>
+<td>3</td>
+<td>劉邦鋒</td>
+<td>系訂必修</td>
+</tr>
+<tr>
+<td>微積分 (1)(2)</td>
+<td>2+2=4</td>
+<td>蔡雅如</td>
+<td>系訂必修</td>
+</tr>
+<tr>
+<td>普通物理學甲上</td>
+<td>3</td>
+<td>胡德邦</td>
+<td>系訂必修</td>
+</tr>
+<tr>
+<td>演算法設計與分析</td>
+<td>3</td>
+<td>陳縕儂、蕭旭君</td>
+<td>系訂必修 (大二)</td>
+</tr>
+<tr>
+<td>計算機概論</td>
+<td>3</td>
+<td>徐宏民</td>
+<td>系訂選修</td>
+</tr>
+<tr>
+<td>大學國文：文學鑑賞與寫作（一）</td>
+<td>3</td>
+<td>潘少瑜</td>
+<td>校定必修</td>
+</tr>
+<tr>
+<td>程式結構與設計</td>
+<td>3</td>
+<td>鄭卜壬</td>
+<td>系訂選修</td>
+</tr>
+<tr>
+<td>健康體適能</td>
+<td>1</td>
+<td>莊國禎</td>
+<td>校定必修</td>
+</tr>
+</tbody>
+</table>
+<p>總學分數：23
+GPA: 4.22</p>
+<h2 id="正文">正文</h2>
+<h3 id="計算機程式設計真強者視角">計算機程式設計（真強者視角）</h3>
+<p>這是資工系學生進入大學之後第一堂和資訊有直接關聯的必修課。而這堂課的設計就是要對剛接觸程式設計的學生有挑戰性。給分是 100% 的考試，內容是基礎的 C 語法和一點點的資料結構（具體來講就是由片語學習 C 語言那本書的東西）。</p>
+<p>對於高中有競賽經歷的人，可以在學期開始前寫信給教授當「真強者」，真強者的工作是要在每次考試前和教授、助教開會討論題目，並且把考試題目寫過一遍確認題目沒有問題。因此只要真強者按時開會（其實不開會好像也沒事）跟寫完題目就會 A+ 。</p>
+<p>個人認為，這堂課對於沒寫過程式的新手來講實在很難通過，今年的題目似乎特別困難，有很多大實作（code 很長）或是跨到 DSA 範圍的東西，所以停修+被當的比例特別高。事實上，如果去考試的話，我也不一定有把握能A+，所以如果你是程式初學者的大一新生的話，建議 <del>直接退選</del> 從暑假開始預習。</p>
+<p>前面提到的「跟教授、助教開會討論題目」其實比較像是聽教授講題目給助教聽，並且把總共 6 題依照難度分成單、雙兩班。有一些題目實在是有點刁鑽，我在驗題的時候都不一定有在三小時內寫完。但是出的這麼困難，讓停修比例這麼高的結果是很多人都沒有好好的把後面的內容看完，可能就會導致之後 DSA 跟 ADA 的時候更吃虧一點。建議停修/被當的人不要放棄(?)，畢竟打好基礎是最重要的。</p>
+<ul>
+<li>Loading: 協助 5 次考試的出題，每次討論 ~1 小時 + 寫 1~3 小時</li>
+</ul>
+<h3 id="微積分-12">微積分 (1)(2)</h3>
+<p>蔡雅如的微積分給分方式是 30% 作業 (Webwork + 手寫 + 三張學習單)，20% 小考（兩次各 10%），和 50%期考，微一跟微二是分開給分的。</p>
+<p>跟其他班不同的是手寫作業特別多題 (每週大概 8~12 題)，不過講課也算是講的很清楚的。課程簡報和上課的計算都會給影片跟簡報，所以學習資源算是蠻完整的。雖然我沒什麼聽老師現場的講課（就算現場有去也都在寫作業），但是老師的簡報對準備考試的幫助很大，就算是已經學過的人，看一下裡面的例題確定自己都會做也很有用。</p>
+<p>週一下午還有一個小時的助教課，主要會補充一些課外內容以及幫助同學完成學習單。我的助教講解的蠻清楚的，但是有時候語速有點快（或是我那時候很想睡），而且感覺不太清楚我們上課的進度到哪裡。</p>
+<p>兩次小考都是在助教課進行的，感覺第一次的都特別難（或是我低估難度/計算不熟之類的），導致我考完第一次小考之後都變成 A+ 快沒救了，然後就會超級認真念，最後驚險的補救回來。希望下學期不要再有這麼可怕的狀況了（但還是要 A+啊）。</p>
+<p>喔對，期末考前寫考古題超級有用，大推。</p>
+<p>因為高中的時候預習過一部分內容，所以目前沒有覺得微積分特別吃力，但是下學期的東西我現在完全不會，所以下學期想必會花更多時間。</p>
+<ul>
+<li>Loading: 每週作業 3~5 小時 + 考前複習約 10 小時</li>
+<li>收穫: 還行吧，至少我覺得考試內容的東西我都還算熟悉。</li>
+</ul>
+<h3 id="普通物理學甲上">普通物理學甲上</h3>
+<p>大甜課，相信德邦絕對沒錯。</p>
+<p>其實我覺得認真聽課的話是可以好好學到物理的，老師講課會一步步的慢慢帶公式，也會問（所剩不多）的現場同學有沒有跟上，下課後去問問題也會很耐心的回答。</p>
+<p>期中考取消讓整堂課的 Loading 變輕許多，但是期中以前的東西我可能忘掉一堆了。</p>
+<p>經過一個學期，我終於覺得有一點懂電磁學在幹嘛了，希望下學期也能弄懂量子物理。</p>
+<p>Loading: 作業每次2~4小時，總共七次（後面幾週就沒有了），加上上課每週四小時，有上課的話不用花太多課外時間複習。</p>
+<h3 id="演算法設計與分析-ada">演算法設計與分析 (ADA)</h3>
+<p>大二必修，介紹常見的演算法，和競賽程式的關聯性不小。
+因為作業和考試都是由助教負責，所以題目品質跟難度控制的就蠻剛好的，對競賽選手來說要拿 A+ 蠻簡單的，但是考試前還是要花一些時間看清楚簡報的東西。整體來說，這堂課對我最大的幫助應該是透過手寫作業提升寫證明和描述演算法的能力，在寫一些講義的時候有明顯的進步。</p>
+<p>因為我都沒有上課，所以其實不知道聽課有沒有幫助，但是對已經學過的人來說看看簡報跟問一下同學就夠了。期考前寫考古題也蠻有用的。</p>
+<p>這堂課的助教們都非常的負責任，也很願意跟學生溝通，希望作業能改快一點就是了。</p>
+<p>最近發現我對後面介紹 NP 問題和估計演算法的部份蠻感興趣的，目前正在考慮下學期修電機所的高等演算法。</p>
+<p>Loading: 四次作業各 10~15 小時 (不含加分題的部份)，加分題可能在每次作業讓我多了 5~10 小時之類的。Mini 作業每週大約半小時，準備期考約 5 小時</p>
+<h3 id="計算機概論">計算機概論</h3>
+<p>這堂課前半是先講電腦背後的基本結構，後半則是介紹一些資工系需要會的東西 (Python, Git, 網路簡介, OS 簡介, SQL) 。老師會把上課簡報放在 COOL 上，但是不會有上課的錄影。簡報有一些地方會有點不清楚，有時候需要自己猜這個部份的意思是什麼，但是只看簡報也足夠準備期考。老師的講課速度有點慢，有時候會花蠻多時間講題外話/閒聊的，而且 101 教室有點太好睡了，所以期中之後就很少去上課。</p>
+<p>期末考因為範圍很大 (後半的那些東西)，很多人都沒有辦法唸完，所以那個時候我也準備的比較辛苦。我覺得這堂課的知識性內容還算實用，但是比較技術性的東西 (Python 用法， SQL 語法) 感覺在這邊就先講的效果不是很好。</p>
+<p>Loading: 作業八次，每次約 2~3 小時（除了 Python + Git 那次大概 10 小時），期中幾乎沒念但是有上課，期末沒什麼上課但是唸了 7~8 小時。</p>
+<h3 id="大學國文文學鑑賞與寫作一">大學國文：文學鑑賞與寫作（一）</h3>
+<p>扎實，Loading 普通，甜度普通</p>
+<p>在選國文的時候因為不想碰古文，看到在講晚清小說的課，感覺蠻有趣的就填了。</p>
+<p>這堂課的給分是 10% 出席，15% 平常作業 （小作業+2000字探索書寫+NTU Cool 討論），2000字讀書報告 20%，期中考 30%，期末報告 15%。作業的給分還算蠻甜的（正常寫的話最低 B+，我的探索書寫跟報告都有拿到 A），不過期中考就稍微困難一點。</p>
+<p>上課方式是每週先預習完指定的文本，上課時老師再帶過那段文本的重點和補充時代背景等，最後會分組進行問題討論。講課內容和閱讀的文本都還蠻有趣的，而且真的可以學到如何分析一個文學作品，並且了解到清末民初的社會和文化如何產生變革。如果對那個時代的歷史/文學有興趣的人應該會蠻喜歡這堂課的。</p>
+<p>我覺得稍微可惜的就是分組的方式。因為上課的分組是老師某一天隨機分好的，然後同一組會維持一整個學期，所以每一組的實力可能就會產生一些差距。我們這組因為有人中途停修，變成只有四個人，但是其他組有六個人，還好其他幾個組員都蠻可靠的。</p>
+<p>期中考形式是考上課的文本相關的申論題共五題，比較特別的是他不是 Open Book，所以一定要對之前的文本有印象。題目本身沒有到特別刁鑽，但是對第一次考申論題的人來說有點困難。老師的給分也會比較嚴格，我自己是拿到 69 分，據說是中位數。</p>
+<p>Loading: 指定閱讀 2.5~3 小時（只有期中考前有讀）、上課 3 小時。上面三個大作業（探索書寫，讀書報告跟期末報告）大概都是 10 到 15 小時（我的作文寫非常慢）。</p>
+<h3 id="程式結構與設計-icpc-培訓班">程式結構與設計 (ICPC 培訓班)</h3>
+<p>上大學之後就決定先繼續比一年的 ICPC 。多虧有可靠的隊友，讓我在今年的培訓班過得順利又有成就感。</p>
+<p>今年修培訓班最大的收穫就是習慣團隊合作的模式和慢慢有辦法面對困難的問題。每次把那份難到誇張的作業題單寫完的時候真的會很有成就感XD。</p>
+<p>Loading: 作業每次 10~15 小時（總共六次，學期中只有四次），每週團練 5 小時，加上一些比賽等等，平均一週可能 10 小時，但是 12 月初就結束了。</p>
+<h3 id="健康體適能">健康體適能</h3>
+<p>聽說其他系有很多人不滿意這堂課的給分方式，但是我自己覺得還好（雖然我是其中一個 A+）。體適能是他上課的時候唯一會考的東西，所以把那個當作給分依據也蠻合理的，至於女生普遍分數比較高就是另一個問題了，這個部份我也不太清楚。</p>
+<h2 id="結語">結語</h2>
+<p>感覺這學期在課程方面沒有什麼選擇權，比較多是看其他人和之前學長選了什麼課就跟著選，然後就變 23 學分了。</p>
+<p>整體而言我覺得這個學期過得有點太忙，想要留一點空白的時間去探索正課以外的事情。至於 GPA 的部份希望也可以維持上學期的表現，但是不需要為了 GPA 犧牲一些更重要的事。</p>
+<p>最後祝福大家新年快樂！</p>
+
+</article>
+</div>
+
+
+                
+                    
+                
+            </div>
+</main>
+    </body>
+</html>
