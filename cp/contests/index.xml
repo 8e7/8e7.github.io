@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>競賽心得 on 8e7&#39;s blog</title>
+    <link>http://localhost:1313/cp/contests/</link>
+    <description>Recent content in 競賽心得 on 8e7&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 12 May 2022 09:03:20 -0800</lastBuildDate><atom:link href="http://localhost:1313/cp/contests/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TOI 2022 心得文</title>
+      <link>http://localhost:1313/cp/contests/toi2022/</link>
+      <pubDate>Thu, 12 May 2022 09:03:20 -0800</pubDate>
+      
+      <guid>http://localhost:1313/cp/contests/toi2022/</guid>
+      <description>TOI 2022 心得文 拖稿快三個禮拜 終於寫完了&amp;hellip; 第三年進選訓了，當初的興奮少了一些，倒是目標更加明確了。 選訓前 去年四模考完的時候，我只有一</description>
+    </item>
+    
+    <item>
+      <title>2021 資訊學科能力競賽決賽 心得文</title>
+      <link>http://localhost:1313/cp/contests/nhspc2021/</link>
+      <pubDate>Sun, 19 Dec 2021 09:03:20 -0800</pubDate>
+      
+      <guid>http://localhost:1313/cp/contests/nhspc2021/</guid>
+      <description>前言 請了將近兩個月的公假，終於到了正式比賽的這天。這段期間大部分都在費曼跟FHVirus, Yungyao寫題vir比賽。我一直在想辦法找到不</description>
+    </item>
+    
+  </channel>
+</rss>

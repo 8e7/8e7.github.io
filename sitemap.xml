@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/courses/</loc>
+    <lastmod>2023-01-21T22:01:14+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/courses/fall2022/</loc>
+    <lastmod>2023-01-21T22:01:14+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2023-01-20T11:33:42+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/cp/contests/toi2022/</loc>
+    <lastmod>2022-05-12T09:03:20-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/cp/</loc>
+    <lastmod>2022-05-12T09:03:20-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/cp/contests/</loc>
+    <lastmod>2022-05-12T09:03:20-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/cp/contests/nhspc2021/</loc>
+    <lastmod>2021-12-19T09:03:20-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/cp/tutorials/ffttricks/</loc>
+  </url><url>
+    <loc>http://localhost:1313/cp/tutorials/</loc>
+  </url>
+</urlset>

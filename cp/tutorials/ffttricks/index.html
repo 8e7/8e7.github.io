@@ -1,0 +1,291 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='zh-tw'><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>卷積的各種技巧 - 8e7&#39;s blog</title>
+
+    
+
+    
+
+    
+
+    
+        <meta property="og:title" content="卷積的各種技巧" />
+<meta property="og:description" content="這篇文章主要是讓我自己參考的筆記，因為這是一個有點容易忘記的技巧qwq 我也不知道要寫啥，就直接進入正題吧 CDQ 分治與「在線」FFT 參考文章 問題介" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/cp/tutorials/ffttricks/" /><meta property="article:section" content="cp" />
+
+
+
+    
+
+    
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="卷積的各種技巧"/>
+<meta name="twitter:description" content="這篇文章主要是讓我自己參考的筆記，因為這是一個有點容易忘記的技巧qwq 我也不知道要寫啥，就直接進入正題吧 CDQ 分治與「在線」FFT 參考文章 問題介"/>
+
+    <link rel="stylesheet" href="/style.css" integrity="">
+
+
+
+
+
+    
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/header.js" integrity=""></script>
+
+
+
+    <script defer src="/js/zooming.js" integrity=""></script>
+
+
+
+
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer src="/js/math.js" integrity=""></script>
+
+
+
+
+    
+        
+        
+            <script defer src="/js/builtin-copy.js" integrity=""></script>
+        
+    
+
+
+
+
+
+
+</head><body>
+        <main><header>
+    <div class="brand">
+        <div id="sidebar_btn">
+            <svg id="menu_icon" width="26px" height="26px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></svg>
+        </div>
+
+        <div>
+            <a href="/">8e7's blog</a>
+        </div>
+    </div>
+
+    <div class="toolbox">
+        <div id="theme_tool">
+            <svg id="dark_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></svg>
+            <svg id="light_mode_btn" class="hidden toolbox-btn" width="18px" height="18px" viewBox="0 0 24 24"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></svg>
+        </div>
+
+        
+
+        
+    </div>
+</header>
+<nav id="navbar" class="pure-menu"><ul class="pure-menu-list"><li class="navbar-item navbar-dropdown pure-menu-item pure-menu-has-children pure-menu-allow-hover insection">
+                    
+                        <a href="/cp/" class="pure-menu-link">競程筆記</a>
+                    
+                    <ul class="pure-menu-children">
+    
+        <li class="pure-menu-item">
+            
+                <a href="/cp/tutorials/" class="pure-menu-link">算法簡介和題解</a>
+            
+        </li>
+    
+
+    
+        <li class="pure-menu-item">
+            
+                <a href="/cp/contests/" class="pure-menu-link">比賽心得</a>
+            
+        </li>
+    
+
+</ul>
+                </li><li class="navbar-item pure-menu-item ">
+                    
+                        <a href="/posts/" class="pure-menu-link">其他</a>
+                    
+                </li><li class="navbar-item pure-menu-item ">
+                    
+                        <a href="/courses/" class="pure-menu-link">修課心得</a>
+                    
+                </li></ul>
+</nav>
+<div id="sidebar_canvas_overlay" class="hidden"></div>
+<div id="sidebar" class="close">
+    <ul><li>
+                    <details>
+                        <summary><a href="/cp/">競程筆記</a></summary>
+    <ul>
+        
+            
+                <li>
+                    
+                        <a href="/cp/tutorials/">算法簡介和題解</a>
+                    
+                </li>
+            
+        
+            
+                <li>
+                    
+                        <a href="/cp/contests/">比賽心得</a>
+                    
+                </li>
+            
+        
+    </ul>
+</details>
+                </li><li>
+                    <a href="/posts/">其他</a>
+                </li><li>
+                    <a href="/courses/">修課心得</a>
+                </li></ul>
+</div><div id="content" class="content-margin">
+                
+    
+    <details class="collapsible-menu-wrapper"><summary class="collapsible-menu-type"><span>Table of contents</span></summary><div class="collapsible-menu">
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#問題介紹">問題介紹</a></li>
+    <li><a href="#解決方法">解決方法</a></li>
+  </ul>
+</nav>
+        
+    </div></details>
+
+
+
+    <div class="content-margin">
+
+<article class="line-numbers">
+    
+    
+    <p>這篇文章主要是讓我自己參考的筆記，因為這是一個有點容易忘記的技巧qwq</p>
+<p>我也不知道要寫啥，就直接進入正題吧</p>
+<h1 id="cdq-分治與在線fft">CDQ 分治與「在線」FFT</h1>
+<p><a href="https://codeforces.com/blog/entry/111399">參考文章</a></p>
+<h2 id="問題介紹">問題介紹</h2>
+<p>我們要想辦法求出一個序列 $a$ 的前 $n$ 項，用 $a_0, a_2, \dots, a_{n-1}$ 表示。</p>
+<p>$a_i$ 的遞迴關係是：</p>
+<p>$a_i = \sum_{j=0}^{i-1} b_j \times c_{i-1-j}$，且 $b_i = f(a_i), c_i = g(a_i)$</p>
+<p>這樣子的問題不好直接解決，因為直接算的複雜度是 $O(n^2)$，而且也不容易使用卷積，因為需要先算好前面的項目才能推算後面的部份。這個時候就需要使用 CDQ 分治的一個變形。</p>
+<h2 id="解決方法">解決方法</h2>
+<p>以下假設 $n = 2^k, k \in \mathbb{N}$</p>
+<p>令 $A(x) = a_0 + a_1x + a_2x^2 + \dots + a_{n-1}x^{n-1}$，並且用同樣的方式定義 $B(x), C(x)$。令 $A_{l, r}(x) = a_l + a_{l+1} x + \dots + a_rx^{r-l}$，那麼 CDQ 分治的想法如下：</p>
+<p><code>solve(l, r)</code> 會計算出 $A_{l, r-1}$。步驟為：</p>
+<ol>
+<li>初始狀態：如果 $r = l+1$，代表 $A_l$ 算好了，因此要推算 $b_l, c_l$ 並且 return</li>
+<li>令 $m = \frac{l+r}{2}$，先呼叫 <code>solve(l, m)</code>。</li>
+<li>計算左半對右半的影響，這邊需要計算的轉移有兩個部份：用到 $B_{l, m-1}$ 的和用到 $C_{l, m-1}$ 的，而根據這兩個部份有沒有重疊可以分成兩種 Case:</li>
+<li>如果 $l = 0$，那麼 $B, C$ 一定會完全重疊，因此計算 $D(x) = xB_{l, m-1}(x)C_{l, m-1}(x)$，並且將 $a_i$ 加上 $D_{i}$，對於所有 $m \leq i &lt; r$</li>
+<li>如果 $l &gt; 0$，那麼 $B_{l, m-1}$ 和 $C_{l, m-1}$ 所用到的部份沒有任何重疊。具體來說，計算 $D(x) = xB_{l, m-1}(x)C_{0, r-l-1}(x)$ 和 $E(x) = xB_{0, r-l-1}(x)C_{l, m-1}(x)$，並且將 $a_i$ 加上 $D_{i} + E_{i}$，對於所有 $m \leq i &lt; r$</li>
+</ol>
+<p>實做可能會像這樣（<a href="https://codeforces.com/contest/1792/problem/F2">CF 1792 F2: Graph Coloring</a>）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>NTT<span style="color:#f92672">&lt;</span>maxn, <span style="color:#ae81ff">998244353</span>, <span style="color:#ae81ff">3</span><span style="color:#f92672">&gt;</span> ntt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">mult</span>(vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>va, vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>vb, vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>h, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> m, <span style="color:#66d9ef">int</span> r) {
+</span></span><span style="display:flex;"><span>	ntt(va, va.size(), <span style="color:#ae81ff">0</span>), ntt(vb, vb.size(), <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;i <span style="color:#f92672">&lt;</span> va.size();i<span style="color:#f92672">++</span>) va[i] <span style="color:#f92672">=</span> va[i] <span style="color:#f92672">*</span> vb[i] <span style="color:#f92672">%</span> mod;	
+</span></span><span style="display:flex;"><span>	ntt(va, va.size(), <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> m;i <span style="color:#f92672">&lt;</span> r;i<span style="color:#f92672">++</span>) h[i] <span style="color:#f92672">=</span> (h[i] <span style="color:#f92672">+</span> va[i<span style="color:#f92672">-</span>l<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])<span style="color:#f92672">%</span>mod;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">solve</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>f, vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>g, vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>h) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (r <span style="color:#f92672">-</span> l <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>		h[l] <span style="color:#f92672">=</span> h[l] <span style="color:#f92672">*</span> fac[l]<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">%</span> mod;
+</span></span><span style="display:flex;"><span>		f[l] <span style="color:#f92672">=</span> h[l] <span style="color:#f92672">*</span> finv[l]<span style="color:#f92672">%</span>mod<span style="color:#f92672">*</span> ((mod<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>)<span style="color:#f92672">%</span>mod;
+</span></span><span style="display:flex;"><span>		g[l] <span style="color:#f92672">=</span> h[l] <span style="color:#f92672">*</span> finv[l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">%</span> mod;
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">//debug(&#34;found&#34;, l, h[l], f[l], g[l]);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> m <span style="color:#f92672">=</span> (l <span style="color:#f92672">+</span> r) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>	solve(l, m, f, g, h);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//debug(&#34;add&#34;, l, m, r);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (l <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> va(f.begin(), f.begin()<span style="color:#f92672">+</span>m), vb(g.begin(), g.begin()<span style="color:#f92672">+</span>m);
+</span></span><span style="display:flex;"><span>		va.resize(r<span style="color:#f92672">-</span>l), vb.resize(r<span style="color:#f92672">-</span>l);
+</span></span><span style="display:flex;"><span>		mult(va, vb, h, l, m, r);
+</span></span><span style="display:flex;"><span>	} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> va(f.begin(), f.begin()<span style="color:#f92672">+</span>r<span style="color:#f92672">-</span>l), vb(g.begin()<span style="color:#f92672">+</span>l, g.begin()<span style="color:#f92672">+</span>m);
+</span></span><span style="display:flex;"><span>			vb.resize(r<span style="color:#f92672">-</span>l);
+</span></span><span style="display:flex;"><span>			mult(va, vb, h, l, m, r);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> va(f.begin()<span style="color:#f92672">+</span>l, f.begin()<span style="color:#f92672">+</span>m), vb(g.begin(), g.begin()<span style="color:#f92672">+</span>r<span style="color:#f92672">-</span>l);
+</span></span><span style="display:flex;"><span>			va.resize(r<span style="color:#f92672">-</span>l);
+</span></span><span style="display:flex;"><span>			mult(va, vb, h, l, m, r);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	solve(m, r, f, g, h);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	io;
+</span></span><span style="display:flex;"><span>	fac[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> finv[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;i <span style="color:#f92672">&lt;</span> maxn;i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>		fac[i] <span style="color:#f92672">=</span> fac[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> i <span style="color:#f92672">%</span> mod;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	finv[maxn<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> modpow(fac[maxn<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], mod<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> maxn<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>;i <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>;i<span style="color:#f92672">--</span>) finv[i] <span style="color:#f92672">=</span> finv[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> (i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span>mod;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span>	cin <span style="color:#f92672">&gt;&gt;</span> n;
+</span></span><span style="display:flex;"><span>	vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> f(maxn), g(maxn), h(maxn);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	f[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, f[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	g[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, g[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	h[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, h[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>	solve(<span style="color:#ae81ff">0</span>, maxn, f, g, h);
+</span></span><span style="display:flex;"><span>	cout <span style="color:#f92672">&lt;&lt;</span> (h[n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>mod<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">%</span>mod <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="轉換多項式的資訊">轉換多項式的資訊</h1>
+<p>我不知道這個技巧是不是很常見，但是我看到這個酷題就決定把他記起來了XD</p>
+<p>問題內容：<a href="https://atcoder.jp/contests/agc063/tasks/agc063_e">AGC 063 E</a></p>
+<p>這題的初步想法很標準：將每個節點的數值作為狀態做樹 DP。因為項數很多而且轉移看起來很卷積，我們可以用一個生函 $f_v(x) = dp_{v, 0} + dp_{v, 1}x + dp_{v, 2}x^2 + \dots$ 表示這個節點的 DP 值，而我們就能得到以下轉移</p>
+<p>$p(x) = f(x^r)x^{A_v}, f&rsquo;_v(x) = p(1) - \frac{p(1) - p(x)}{1-x}$，其中 $F$ 是一個將 $f$ 轉換的方式，具體的方法看題目。</p>
+<p>$f_v(x) = \Pi_{v \rightarrow c} f&rsquo;_c(x)$，這是將子節點做卷積的部份。</p>
+<p>最後要求的答案是 $f&rsquo;_{root}(1)$，也就是那個多項式的所有係數和。</p>
+<p>這題精妙的地方就是在這個轉換：考慮 $g(x) = f(x+1)$，那麼我們最後要計算的是 $g&rsquo;_{root}{0}$，只需要知道一項就好！</p>
+<p>仔細觀察轉移之後會發現，除以 $1-x$ 的部份會直接變成除以 $-x$，不只省去了實做麻煩的除法，還發現次方大於 $n$ 的東西一定不會影響到最後的常數項！所以這個問題瞬間就變的可做了。</p>
+<p>(以下待補&hellip;)</p>
+
+</article>
+</div>
+
+
+                
+                    
+                
+            </div>
+</main>
+    </body>
+</html>
