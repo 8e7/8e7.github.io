@@ -2,17 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>修課心得 on 8e7&#39;s blog</title>
-    <link>http://localhost:1313/courses/</link>
+    <link>http://8e7.github.io/courses/</link>
     <description>Recent content in 修課心得 on 8e7&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 21 Jan 2023 22:01:14 +0800</lastBuildDate><atom:link href="http://localhost:1313/courses/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Sep 2023 22:01:14 +0800</lastBuildDate><atom:link href="http://8e7.github.io/courses/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>YTP 海外參訪心得</title>
+      <link>http://8e7.github.io/courses/bmoe/</link>
+      <pubDate>Mon, 11 Sep 2023 22:01:14 +0800</pubDate>
+      
+      <guid>http://8e7.github.io/courses/bmoe/</guid>
+      <description>YTP 海外參訪心得 (照片待補) 這個心得分成兩個部份，前半是灣區的企業參訪，後半則是參加 BMoE 營隊的心得。 Day 1~5 灣區參訪 前幾天的行程參觀了一些不同的公司</description>
+    </item>
+    
     <item>
       <title>台大資工大一上 修課心得</title>
-      <link>http://localhost:1313/courses/fall2022/</link>
+      <link>http://8e7.github.io/courses/fall2022/</link>
       <pubDate>Sat, 21 Jan 2023 22:01:14 +0800</pubDate>
       
-      <guid>http://localhost:1313/courses/fall2022/</guid>
+      <guid>http://8e7.github.io/courses/fall2022/</guid>
       <description>學期：111年第一學期 (Fall 2022) 前言 拖稿拖太久了qwq 看到一堆同學都有寫修課心得，所以想說也來寫寫看好了。這個修課心得可能比較像是學期回顧 (?)，</description>
     </item>
     

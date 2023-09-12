@@ -18,7 +18,7 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href='/favicon.ico' type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>競賽心得 - 8e7&#39;s blog</title>
+    <title>Git 和 Github 教學 - 8e7&#39;s blog</title>
 
     
 
@@ -27,17 +27,19 @@
     
 
     
-        <meta property="og:title" content="競賽心得" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://8e7.github.io/cp/contests/" />
+        <meta property="og:title" content="Git 和 Github 教學" />
+<meta property="og:description" content="Git 和 Github 教學 這篇文章是前瞻工作坊的「Git 初階」課程所使用的參考文件。 Outline: 安裝與設定 add 和 commit 指定 commit patch add 和 amend branch 和 merge rebase remote 和 GitHub stash patch 和 cherry-Pick bisect and blame 補充資訊 什麼" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://8e7.github.io/cp/tutorials/git/" /><meta property="article:section" content="cp" />
+
+
 
     
 
     
         <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="競賽心得"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Git 和 Github 教學"/>
+<meta name="twitter:description" content="Git 和 Github 教學 這篇文章是前瞻工作坊的「Git 初階」課程所使用的參考文件。 Outline: 安裝與設定 add 和 commit 指定 commit patch add 和 amend branch 和 merge rebase remote 和 GitHub stash patch 和 cherry-Pick bisect and blame 補充資訊 什麼"/>
 
     <link rel="stylesheet" href="/style.min.28e80fa235e0f672a1c81572090ce442672383e787e4e5fe8a932eafa82cb44b.css" integrity="sha256-KOgPojXg9nKhyBVyCQzkQmcjg&#43;eH5OX&#43;ipMur6gstEs=">
 
@@ -67,6 +69,13 @@
 
 
 
+
+    
+        
+        
+            <script defer src="/js/builtin-copy.a89c7b4e13df953403c75897ad4b6db68fad6534043bb234d29a80015f1ec9d1.js" integrity="sha256-qJx7ThPflTQDx1iXrUttto&#43;tZTQEO7I00pqAAV8eydE="></script>
+        
+    
 
 
 
@@ -176,6 +185,22 @@
                 </li></ul>
 </div><div id="content" class="content-margin">
                 
+    
+    <details class="collapsible-menu-wrapper"><summary class="collapsible-menu-type"><span>Table of contents</span></summary><div class="collapsible-menu">
+        
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#什麼是-gitgithub">什麼是 Git，Github？</a></li>
+    <li><a href="#step-1---安裝與設定">Step 1 - 安裝與設定</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
+    </div></details>
+
 
 
     <div class="content-margin">
@@ -183,47 +208,32 @@
 <article class="line-numbers">
     
     
-    <h1 id="競賽心得">競賽心得</h1>
+    <h1 id="git-和-github-教學">Git 和 Github 教學</h1>
+<p>這篇文章是前瞻工作坊的「Git 初階」課程所使用的參考文件。</p>
+<p>Outline:</p>
+<pre><code>安裝與設定
+add 和 commit
+指定 commit
+patch add 和 amend
+branch 和 merge
+rebase
+remote 和 GitHub
+stash
+patch 和 cherry-Pick
+bisect and blame
+補充資訊
+</code></pre>
+<h2 id="什麼是-gitgithub">什麼是 Git，Github？</h2>
+<p>想像你在做一個程式專案，而你可能想要試試看新增一個功能，但是這個功能可能會動到很多個檔案，如果修完出 bug 了，那要變回原本的版本就會非常麻煩&hellip; 這種問題造就了 git 的誕生。</p>
+<p>Git 是一個版本控制系統，可以幫電腦裡的檔案和資料夾紀錄不同時間的狀態。有了 git，你就能一步步的進行專案的開發，並且即使犯錯也有反悔的方法。</p>
+<p>Github 則是 Git 的遠端資料庫，當你把專案上傳到 Github 之後，就能在另外一台電腦上把他下載下來。Github 最強大的是他的協作功能 — 一個團隊可以使用 Github 同時開發大型的專案，並且將不同地方的修改使用 merge 的方式來合併，這就是為什麼 Git 和 Github 在軟體開發界無所不在。</p>
+<h2 id="step-1---安裝與設定">Step 1 - 安裝與設定</h2>
+<p>首先，先建立一個 Github 帳號！
+先去 <a href="https://github.com/">https://github.com/</a> 申請一個帳號。</p>
+<h3 id="linux">Linux</h3>
 
 </article>
 </div>
-
-    
-        <div class="content-margin">
-            <h1>2022</h1>
-
-<ul class="list-layout">
-    
-        <li>
-            <a href="/cp/contests/toi2022/">TOI 2022 心得文</a>
-            
-                <span>
-                    05/12
-                </span>
-            
-        </li>
-    
-</ul></div>
-    
-        <div class="content-margin">
-            <h1>2021</h1>
-
-<ul class="list-layout">
-    
-        <li>
-            <a href="/cp/contests/nhspc2021/">2021 資訊學科能力競賽決賽 心得文</a>
-            
-                <span>
-                    12/19
-                </span>
-            
-        </li>
-    
-</ul></div>
-    
-    
-
-
 
 
                 

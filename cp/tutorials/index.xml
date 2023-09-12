@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>算法簡介和題解 on 8e7&#39;s blog</title>
-    <link>http://localhost:1313/cp/tutorials/</link>
-    <description>Recent content in 算法簡介和題解 on 8e7&#39;s blog</description>
+    <title>資訊工具教學 on 8e7&#39;s blog</title>
+    <link>http://8e7.github.io/cp/tutorials/</link>
+    <description>Recent content in 資訊工具教學 on 8e7&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language><atom:link href="http://localhost:1313/cp/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-tw</language><atom:link href="http://8e7.github.io/cp/tutorials/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>卷積的各種技巧</title>
-      <link>http://localhost:1313/cp/tutorials/ffttricks/</link>
+      <title>Git 和 Github 教學</title>
+      <link>http://8e7.github.io/cp/tutorials/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/cp/tutorials/ffttricks/</guid>
-      <description>這篇文章主要是讓我自己參考的筆記，因為這是一個有點容易忘記的技巧qwq 我也不知道要寫啥，就直接進入正題吧 CDQ 分治與「在線」FFT 參考文章 問題介</description>
+      <guid>http://8e7.github.io/cp/tutorials/git/</guid>
+      <description>Git 和 Github 教學 這篇文章是前瞻工作坊的「Git 初階」課程所使用的參考文件。 Outline: 安裝與設定 add 和 commit 指定 commit patch add 和 amend branch 和 merge rebase remote 和 GitHub stash patch 和 cherry-Pick bisect and blame 補充資訊 什麼</description>
     </item>
     
   </channel>
