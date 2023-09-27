@@ -6,14 +6,5 @@
     <description>Recent content in 資訊工具教學 on 8e7&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language><atom:link href="http://8e7.github.io/cp/tutorials/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Git 和 Github 教學</title>
-      <link>http://8e7.github.io/cp/tutorials/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://8e7.github.io/cp/tutorials/git/</guid>
-      <description>Git 和 Github 教學 這篇文章是前瞻工作坊的「Git 初階」課程所使用的參考文件。 Outline: 安裝與設定 add 和 commit 指定 commit patch add 和 amend branch 和 merge rebase remote 和 GitHub stash patch 和 cherry-Pick bisect and blame 補充資訊 什麼</description>
-    </item>
-    
   </channel>
 </rss>
